@@ -1,4 +1,4 @@
-# The Number Machine — Class 7 AI Project
+# The Number Machine — AI + Mathematics Project
 
 Version 1 contains:
 1. Machine Room — chain +, −, ×, ÷ machines with animation and sound.
