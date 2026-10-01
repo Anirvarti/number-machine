@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Number Machine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<header class="hero">
+<div><div class="eyebrow">CLASS 7 • AI + MATHEMATICS</div>
+<h1>🔢 The Number Machine</h1>
+<p>Four simple operations. Endless patterns. Can you discover the hidden machine?</p></div>
+<div class="badge">OFFLINE AI LAB</div>
+</header>
+<nav class="tabs">
+<button class="tab active" data-tab="machine">⚙️ Machine Room</button>
+<button class="tab" data-tab="guess">🧠 Guess the Machine</button>
+<button class="tab" data-tab="melody">🎵 Pattern Player</button>
+</nav>
+<main>
+<section id="machine" class="panel active">
+<div class="section-head"><div><h2>Machine Room</h2><p>Build a chain of operations and watch every mathematical step happen.</p></div><button id="clearChain" class="secondary">Reset</button></div>
+<div class="machine-layout">
+<div class="machine-stage">
+<div class="input-row"><label for="startNumber">Starting number</label><input id="startNumber" type="number" value="2" min="-999" max="999"></div>
+<div id="chain" class="chain"></div>
+<div class="output-card"><span>FINAL RESULT</span><strong id="finalResult">2</strong></div>
+</div>
+<aside class="operation-panel"><h3>Add a machine</h3>
+<div class="op-grid">
+<button class="op op-plus" data-op="+">+ <span>Add</span></button>
+<button class="op op-minus" data-op="-">− <span>Subtract</span></button>
+<button class="op op-multiply" data-op="*">× <span>Multiply</span></button>
+<button class="op op-divide" data-op="/">÷ <span>Divide</span></button>
+</div>
+<label for="amount">Amount</label><input id="amount" type="number" value="3" min="1" max="99">
+<p class="hint">Example: <b>2 → ×3 → 6 → +1 → 7</b></p></aside>
+</div>
+<div id="machineExplanation" class="explain"><b>How it works:</b> each machine takes one number, applies one operation, and passes the result to the next machine.</div>
+</section>
+
+<section id="guess" class="panel">
+<div class="section-head"><div><h2>Guess the Machine</h2><p>The AI searches through small combinations of +, −, × and ÷ to explain the examples.</p></div><button id="newPuzzle" class="secondary">New puzzle</button></div>
+<div class="guess-layout"><div><div class="examples" id="examples"></div><div class="question">Which machine produced these results?</div><div id="choices" class="choices"></div><div id="guessResult" class="result-box" hidden></div></div>
+<aside class="ai-panel"><div class="ai-title">🧠 AI SEARCH</div><div id="searchStatus">Ready to test possible machines.</div><div class="progress"><i id="searchProgress"></i></div><div id="reasoning" class="reasoning"></div></aside></div>
+<div class="uncertainty"><b>Important AI lesson:</b> a sequence can have more than one rule. This app reports multiple matching machines instead of pretending there is always one certain answer.</div>
+</section>
+
+<section id="melody" class="panel">
+<div class="section-head"><div><h2>Pattern Player</h2><p>Turn a number sequence into sound. Listen to the difference between additive and multiplicative growth.</p></div></div>
+<div class="melody-layout"><div class="sequence-card"><label for="sequence">Number sequence</label><input id="sequence" value="2, 4, 8, 16, 32">
+<div class="sequence-display" id="sequenceDisplay"></div><div class="melody-actions"><button id="playSequence" class="primary">▶ Play pattern</button><button id="stopSequence" class="secondary">■ Stop</button></div></div>
+<div class="visualizer"><div class="visualizer-title">PATTERN → MELODY</div><div id="bars" class="sound-bars"></div><p id="melodyText">Higher numbers become higher notes.</p></div></div>
+<div class="presets"><button data-seq="2,4,6,8,10">+2 steady climb</button><button data-seq="2,4,8,16,32">×2 rapid growth</button><button data-seq="1,4,9,16,25">squares</button><button data-seq="1,1,2,3,5,8">Fibonacci</button></div>
+</section>
+</main>
+<footer>🔬 Search-based pattern reasoning • 🎵 Web Audio • 💻 Runs locally in your browser</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
